@@ -1,0 +1,40 @@
+# Site settings
+title: "Maximiano Micciullo"
+description: "Senior Backend Software Engineer - 15+ years building scalable systems"
+baseurl: ""
+url: "https://maximicciullo.github.io"
+
+# Personal info
+name: Maximiano Micciullo
+title: Senior Backend Software Engineer
+email: mmicciullo@gmail.com
+phone: "+54 9 11 3390 1999"
+linkedin: linkedin.com/in/maximicciullo
+
+# Theme
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# SEO
+lang: en_US
+author: Maximiano Micciullo
+
+# Custom CSS
+sass:
+  style: compressed
+
+# Include custom files
+include:
+  - _pages
+  - assets
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
