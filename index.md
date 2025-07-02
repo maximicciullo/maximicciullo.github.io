@@ -119,7 +119,7 @@ Built NLP-powered conversational AI serving **Fortune 500 companies**, achieving
 ## 🌍 LANGUAGES
 
 - 🇪🇸 **Spanish:** Native
-- 🇺🇸 **English:** Professional Working Proficiency
+- 🇺🇸 **English:** B2 - Upper Intermediate
 
 ---
 
