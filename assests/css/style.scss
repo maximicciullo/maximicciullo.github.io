@@ -6,41 +6,104 @@
 // Custom variables
 $primary-color: #3b82f6;
 $secondary-color: #1e293b;
-$accent-color: #ef4444;
+$accent-color: #059669;
 $text-color: #374151;
 $light-bg: #f8fafc;
 
-// General styles
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: $text-color;
+// OVERRIDE: Make layout full width
+.wrapper {
+  width: 95% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 20px !important;
 }
 
-// Header styles
+// OVERRIDE: Remove sidebar constraints
+header {
+  width: 100% !important;
+  float: none !important;
+  position: static !important;
+  padding: 20px 0 !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, $secondary-color 0%, #334155 100%) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  margin-bottom: 30px !important;
+}
+
+// OVERRIDE: Make content full width
+section {
+  width: 100% !important;
+  float: none !important;
+  padding: 0 !important;
+}
+
+// OVERRIDE: Header styling
+header h1 {
+  color: white !important;
+  font-size: 2.5rem !important;
+  margin-bottom: 10px !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+header p {
+  color: #94a3b8 !important;
+  font-size: 1.2rem !important;
+  margin-bottom: 20px !important;
+}
+
+// Contact info styling
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.contact-item {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  
+  &:hover {
+    color: #60a5fa;
+  }
+}
+
+// General styles
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;
+  line-height: 1.6;
+  color: $text-color;
+  background: #ffffff !important;
+}
+
+// Content styling
 h1 {
-  color: $secondary-color;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  border-bottom: 3px solid $primary-color;
-  padding-bottom: 0.5rem;
+  color: $secondary-color !important;
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  margin: 2rem 0 1rem 0 !important;
+  border-bottom: 3px solid $primary-color !important;
+  padding-bottom: 0.5rem !important;
 }
 
 h2 {
-  color: $secondary-color;
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 0.5rem;
+  color: $secondary-color !important;
+  font-size: 1.6rem !important;
+  font-weight: 600 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  border-bottom: 2px solid #e5e7eb !important;
+  padding-bottom: 0.5rem !important;
+  position: relative !important;
   
   &::before {
     content: '';
     display: inline-block;
     width: 4px;
-    height: 1.2rem;
+    height: 1.4rem;
     background: $primary-color;
     margin-right: 0.5rem;
     vertical-align: bottom;
@@ -48,126 +111,233 @@ h2 {
 }
 
 h3 {
-  color: $secondary-color;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  color: $secondary-color !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 // Links
 a {
-  color: $primary-color;
+  color: $primary-color !important;
   text-decoration: none;
   
   &:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
 }
 
 // Professional experience styling
 ul {
   li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.6 !important;
     
     strong {
-      color: $secondary-color;
+      color: $secondary-color !important;
     }
   }
 }
 
-// Highlight metrics
-strong {
-  font-weight: 600;
+// Highlight metrics with better color
+.metric, strong:contains("$"), strong:contains("%"), strong:contains("M+"), strong:contains("K+"), strong:contains("99.") {
+  background: $accent-color !important;
+  color: white !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+}
+
+// Skills styling
+h3 + ul {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  list-style: none !important;
+  padding: 0 !important;
   
-  // Style metrics in red background
-  &:contains("$"), &:contains("%"), &:contains("M+"), &:contains("K+"), &:contains("99.") {
-    background: $accent-color;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.9rem;
+  li {
+    background: $light-bg !important;
+    border: 1px solid #e5e7eb !important;
+    padding: 4px 12px !important;
+    border-radius: 20px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    color: $primary-color !important;
+    
+    &::before {
+      content: none !important;
+    }
   }
 }
 
 // Code styling for technologies
 code {
-  background: $light-bg;
-  color: $primary-color;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border: 1px solid #e5e7eb;
+  background: $light-bg !important;
+  color: $primary-color !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  border: 1px solid #e5e7eb !important;
 }
 
 // Blockquote styling
 blockquote {
-  background: $light-bg;
-  border-left: 4px solid $primary-color;
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-  color: #6b7280;
-  border-radius: 0 8px 8px 0;
+  background: $light-bg !important;
+  border-left: 4px solid $primary-color !important;
+  padding: 1.5rem 2rem !important;
+  margin: 2rem 0 !important;
+  font-style: italic !important;
+  color: #6b7280 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 1.1rem !important;
 }
 
-// Contact info styling
-p:first-of-type {
-  text-align: center;
-  background: $light-bg;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  margin: 2rem 0;
-  font-size: 1.1rem;
+// Job sections styling
+h3 + ul li {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 15px !important;
+  margin-bottom: 15px !important;
+  border-radius: 8px !important;
+  border-left: 4px solid $primary-color !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  
+  &:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+  }
+}
+
+// Professional summary special styling
+h2:first-of-type + blockquote {
+  background: linear-gradient(135deg, $light-bg 0%, #e2e8f0 100%) !important;
+  border-left: 4px solid $primary-color !important;
+  padding: 2rem !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+}
+
+// Projects styling
+h2:contains("PROJECTS") + ul,
+h2:contains("Projects") + ul {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 20px !important;
+  
+  li {
+    background: $secondary-color !important;
+    color: white !important;
+    padding: 25px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    
+    strong {
+      color: white !important;
+      font-size: 1.1rem !important;
+    }
+    
+    &:hover {
+      transform: translateY(-5px) !important;
+    }
+  }
+}
+
+// Education and Languages styling
+h2:contains("EDUCATION") + ul,
+h2:contains("Education") + ul,
+h2:contains("LANGUAGES") + ul,
+h2:contains("Languages") + ul {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 20px !important;
+  
+  li {
+    background: $light-bg !important;
+    text-align: center !important;
+    padding: 20px !important;
+    border-top: 3px solid $primary-color !important;
+    border-left: none !important;
+  }
 }
 
 // Responsive design
 @media (max-width: 768px) {
+  .wrapper {
+    width: 95% !important;
+    padding: 15px !important;
+  }
+  
+  header h1 {
+    font-size: 2rem !important;
+  }
+  
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem !important;
   }
   
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem !important;
   }
   
-  .wrapper {
-    padding: 1rem;
+  .contact-info {
+    flex-direction: column !important;
+    gap: 15px !important;
   }
 }
 
 // Print styles
 @media print {
   body {
-    font-size: 12px;
+    font-size: 12px !important;
   }
   
-  h1 {
-    font-size: 1.8rem;
+  .wrapper {
+    width: 100% !important;
+    max-width: none !important;
   }
   
-  h2 {
-    font-size: 1.2rem;
-    margin-top: 1rem;
+  header {
+    background: $secondary-color !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  
+  h1, h2 {
+    color: $secondary-color !important;
   }
   
   a {
-    color: $text-color;
-    text-decoration: none;
+    color: $text-color !important;
+    text-decoration: none !important;
+  }
+  
+  ul li:hover {
+    transform: none !important;
+    box-shadow: none !important;
   }
 }
 
-// Custom utility classes
-.text-center {
-  text-align: center;
+// Hide GitHub footer
+footer {
+  display: none !important;
 }
 
-.mt-4 {
-  margin-top: 2rem;
-}
-
-.mb-4 {
-  margin-bottom: 2rem;
+// Override any remaining width constraints
+@media screen and (min-width: 64em) {
+  .wrapper {
+    width: 95% !important;
+    max-width: 1200px !important;
+  }
+  
+  header {
+    width: 100% !important;
+  }
+  
+  section {
+    width: 100% !important;
+  }
 }
